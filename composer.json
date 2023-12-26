@@ -1,0 +1,24 @@
+{
+    "name": "crazy-email-package/send-email",
+    "description": "this package to facilitate the process of sending email",
+    "type": "library",
+    "require": {
+        "illuminate/support": "*"
+    },
+    "require-dev": {
+        "illuminate/support": "*"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "CrazyEmailPackage\\SendEmail\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "crazyideaco",
+            "email": "crazyideacompany@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
