@@ -2,6 +2,14 @@
     "name": "crazy-email-package/send-email",
     "description": "this package to facilitate the process of sending email",
     "type": "library",
+    "version": "1.0.0",
+    "homepage": "https://github.com/crazyideaco/send-email",
+    "keywords": [
+        "crazy-email-package",
+        "send-email",
+        "laravel",
+        "email"
+    ],
     "require": {
         "illuminate/support": "*"
     },
@@ -12,6 +20,13 @@
     "autoload": {
         "psr-4": {
             "CrazyEmailPackage\\SendEmail\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "CrazyEmailPackage\\SendEmail\\CrazySendMainServiceProvider"
+            ]
         }
     },
     "authors": [
