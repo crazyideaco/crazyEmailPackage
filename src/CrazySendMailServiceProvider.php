@@ -23,7 +23,7 @@ class CrazySendMailServiceProvider  extends ServiceProvider
     {
         /** publish config file to config folder for the package */
         $this->publishes([
-            __DIR__.'/../config/SendMainConfig.php' =>  config_path('SendMainConfig.php'),
+            __DIR__.'/../config/SendMailConfig.php' =>  config_path('SendMailConfig.php'),
         ]);
 
         /** load routes */
@@ -33,7 +33,7 @@ class CrazySendMailServiceProvider  extends ServiceProvider
         /** load view, remember to pass the package folder name */
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'sendEmail');
         $this->publishes([
-            __DIR__.'/resources/views' => resource_path('views/sendMainpackage'),
+            __DIR__.'/resources/views' => resource_path('views/emails_templates'),
         ]);
 
         /** load migrations */
