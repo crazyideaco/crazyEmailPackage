@@ -1,6 +1,6 @@
 <?php
 
-namespace Fatoorahpayment\Gatewayintegration;
+namespace CrazyEmailPackage\SendEmail;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Config;
