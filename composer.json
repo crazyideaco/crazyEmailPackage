@@ -11,10 +11,14 @@
         "email"
     ],
     "require": {
-        "illuminate/support": "*"
+        "illuminate/support": "*",
+        "illuminate/http": "*",
+        "illuminate/mail": "*"
     },
     "require-dev": {
-        "illuminate/support": "*"
+        "illuminate/support": "*",
+        "illuminate/http": "*",
+        "illuminate/mail": "*"
     },
     "license": "MIT",
     "autoload": {
