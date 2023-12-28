@@ -21,5 +21,6 @@ class SendMailController extends Controller
         $mailData['subject'] = $request->input('subject');
         $mailData['body'] = $request->input('body');
         $send_mail_service->send_mail($mailData);
+        return new JsonResponse(['success' => true]);
     }
 }
