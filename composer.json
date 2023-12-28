@@ -1,8 +1,8 @@
 {
-    "name": "crazy-email-package/send-email",
+    "name": "crazyemailpackage/sendemail",
     "description": "this package to facilitate the process of sending email",
     "type": "library",
-    "version": "1.0.4",
+    "version": "1.0.5",
     "homepage": "https://github.com/crazyideaco/send-email",
     "keywords": [
         "crazy-email-package",
