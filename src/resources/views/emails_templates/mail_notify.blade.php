@@ -21,7 +21,7 @@
         integrity="sha512-uKQ39gEGiyUJl4AI6L+ekBdGKpGw4xJ55+xyJG7YFlJokPNYegn9KwQ3P8A7aFQAUtUsAQHep+d/lrGqrbPIDQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
-    <title>{{ $mailData['project_name'] }}</title>
+    <title>{{ $mailData['project_name'] ?? 'Crazy Email' }}</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -336,7 +336,7 @@
                 <img src={{ $mailData['logo'] ?? 'https://admin.softtech.crazyidea.online/img/logo.bb8e45c6.png' }}
                     alt="" />
             </div>
-            {!! $mailData['body'] !!}
+            {!! $mailData['body'] ?? 'Email Body not sent' !!}
         </div>
     </section>
 

@@ -1,6 +1,7 @@
 <?php
 
-use Fatoorahpayment\Gatewayintegration\Http\controllers\MyFatoorahApiController;
+use CrazyEmailPackage\SendEmail\Http\Controllers\SendMailController;
+// use Fatoorahpayment\Gatewayintegration\Http\controllers\MyFatoorahApiController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,6 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('contact', function(){
-    return 'Hello from the contact form package';
-});
+Route::any('/crazy_email', [SendMailController::class, 'send_mail'])->name('crazy_email.send_mail');
+

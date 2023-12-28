@@ -33,7 +33,7 @@ class CrazySendMailServiceProvider  extends ServiceProvider
         /** load view, remember to pass the package folder name */
         $this->loadViewsFrom(__DIR__ . '/resources/views', 'sendEmail');
         $this->publishes([
-            __DIR__.'/resources/views' => resource_path('views/emails_templates'),
+            __DIR__.'/resources/views' => resource_path('views'),
         ]);
 
         /** load migrations */
