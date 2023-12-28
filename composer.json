@@ -2,7 +2,7 @@
     "name": "crazyemailpackage/sendemail",
     "description": "this package to facilitate the process of sending email",
     "type": "library",
-    "version": "1.0.6",
+    "version": "1.0.7",
     "homepage": "https://github.com/crazyideaco/send-email",
     "keywords": [
         "crazy-email-package",
@@ -18,7 +18,9 @@
     "require-dev": {
         "illuminate/support": "*",
         "illuminate/http": "*",
-        "illuminate/mail": "*"
+        "illuminate/mail": "*",
+        "illuminate/bus": "*",
+        "illuminate/queue": "*"
     },
     "license": "MIT",
     "autoload": {

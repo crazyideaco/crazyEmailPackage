@@ -15,5 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::any('/crazy_email', [SendMailController::class, 'send_mail'])->name('crazy_email.send_mail');
+Route::post('/crazy_email', [SendMailController::class, 'send_mail'])->name('crazy_email.send_mail');
 

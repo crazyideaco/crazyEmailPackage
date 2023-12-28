@@ -12,13 +12,13 @@ use Illuminate\Queue\SerializesModels;
 class SendMail extends Mailable
 {
     use Queueable, SerializesModels;
-    public $mailData;
-    public $view_path;
+    public array $mailData;
+    public string $view_path;
 
     /**
      * Create a new message instance.
      */
-    public function __construct($mailData,$view_path)
+    public function __construct(array $mailData,string $view_path="")
     {
         $this->mailData = $mailData;
         $this->view_path = $view_path;
