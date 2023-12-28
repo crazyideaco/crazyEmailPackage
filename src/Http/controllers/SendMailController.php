@@ -1,6 +1,6 @@
 <?php
 
-namespace CrazyEmailPackage\SendEmail\Http\Controllers;
+namespace CrazyEmailPackage\SendEmail\Http\controllers;
 
 use App\Http\Controllers\Controller;
 use CrazyEmailPackage\SendEmail\Services\SendMailService;

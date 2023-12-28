@@ -1,6 +1,6 @@
 <?php
 
-use CrazyEmailPackage\SendEmail\Http\Controllers\SendMailController;
+use CrazyEmailPackage\SendEmail\Http\controllers\SendMailController;
 // use Fatoorahpayment\Gatewayintegration\Http\controllers\MyFatoorahApiController;
 use Illuminate\Support\Facades\Route;
 
