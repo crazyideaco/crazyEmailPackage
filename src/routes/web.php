@@ -1,7 +1,8 @@
 <?php
 
-use CrazyEmailPackage\SendEmail\Http\controllers\SendMailController;
 // use Fatoorahpayment\Gatewayintegration\Http\controllers\MyFatoorahApiController;
+
+use CrazyEmailPackage\SendEmail\Http\controllers\web\SendMailWebController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,5 +16,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/crazy_email', [SendMailController::class, 'send_mail'])->name('crazy_email.send_mail');
+// Route::post('/crazy_email', [SendMailController::class, 'send_mail'])->name('crazy_email.send_mail');
+Route::post('/crazy_email', SendMailWebController::class)->name('crazy_email.send_mail');
 
