@@ -12,23 +12,21 @@ use Illuminate\Validation\ValidationException;
 
 class SendMailWebController extends Controller
 {
-    public function __invoke()
-    {
-    }
     /**
-     * Sends an email using the provided mail data and view path.
+     * Invokes the function with the given parameters.
      *
-     * @param array $mailData The data to be used in the email.
+     * @param array $mailData The array of mail data.
      * the required fields in the array are sender_email, receiver_email, subject, body, logo
-     * @param string $view_path The path to the email template.
-     * @throws Exception If an error occurs while sending the email.
-     * @return JsonResponse The JSON response indicating the success of the email sending.
+     * @param string $view_path The path to the view template. Defaults to "emails_templates.mail_notify".
+     * @throws \Some_Exception_Class Description of the exception that can be thrown.
+     * @return \Illuminate\Http\JsonResponse The JSON response with the success status.
      */
-    public function send_mail(array $mailData, string $view_path = "emails_templates.mail_notify")
+    public function __invoke(array $mailData, string $view_path = "emails_templates.mail_notify")
     {
         $send_mail_service = new SendMailService();
         $mailData['project_name'] = Config::get('app.name');
         $send_mail_service->send_mail($mailData,$view_path);
         return new JsonResponse(['success' => true]);
     }
+    
 }

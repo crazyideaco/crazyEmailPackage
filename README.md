@@ -7,7 +7,11 @@ this package to facilitate the creation of the email and send it
 >php artisan vendor:publish --provider="CrazyEmailPackage\SendEmail\CrazySendMailServiceProvider"
 
 ```json
-Route::any('/crazy_email', [SendMailController::class, 'send_mail'])->name('crazy_email.send_mail');
+// for web
+Route::post('/crazy_email', SendMailWebController::class)->name('crazy_email.send_mail');
+
+//  for api
+Route::post('/crazy_email', SendMailApiController::class);
 
 
 ```
@@ -56,4 +60,13 @@ this is the route for sending the email
 </script>
 
 
+```
+
+```Json
+
+    "sender_email": "mostafa.m.hashem.1@gmail.com",
+    "receiver_email": "crazyideacompany@gmail.com",
+    "subject": "test email",
+    "body": "<h1>Test Email Body </h1>",
+    "logo": {the file link}
 ```

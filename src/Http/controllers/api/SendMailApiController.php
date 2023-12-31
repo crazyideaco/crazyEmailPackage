@@ -12,19 +12,18 @@ use Illuminate\Validation\ValidationException;
 
 class SendMailApiController extends Controller
 {
-    public function __invoke()
-    {
-    }
     /**
-     * Sends an email using the provided mail data and view path.
+     * Executes the PHP function and sends an email notification.
      *
-     * @param array $mailData The data to be used in the email.
+     * @param Request $request the HTTP request object
+     *  $mailData The data to be used in the email
      * the required fields in the array are sender_email, receiver_email, subject, body, logo
-     * @param string $view_path The path to the email template.
-     * @throws Exception If an error occurs while sending the email.
-     * @return JsonResponse The JSON response indicating the success of the email sending.
+     * @param string $view_path the path to the email template
+     * @throws Some_Exception_Class if an error occurs while sending the email
+     * @return JsonResponse the JSON response indicating the success of the operation
      */
-    public function send_mail(Request $request, string $view_path = "emails_templates.mail_notify")
+
+    public function __invoke(Request $request, string $view_path = "emails_templates.mail_notify")
     {
         $send_mail_service = new SendMailService();
         $mailData = $request->only(['sender_email', 'receiver_email', 'subject', 'body', 'logo']);
@@ -32,4 +31,6 @@ class SendMailApiController extends Controller
         $send_mail_service->send_mail($mailData,$view_path);
         return new JsonResponse(['success' => true]);
     }
+    
+    
 }
