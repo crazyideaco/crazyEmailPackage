@@ -21,12 +21,13 @@ class SendMailWebController extends Controller
      * @throws \Some_Exception_Class Description of the exception that can be thrown.
      * @return \Illuminate\Http\JsonResponse The JSON response with the success status.
      */
-    public function __invoke(array $mailData, string $view_path = "emails_templates.mail_notify")
+    public function __invoke(array $mailData )
     {
+        $view_path = config('SendMailConfig.view_path');
         $send_mail_service = new SendMailService();
-        $mailData['project_name'] = Config::get('app.name');
         $send_mail_service->send_mail($mailData,$view_path);
-        return new JsonResponse(['success' => true]);
+        // return new JsonResponse(['success' => true]);
+        return response()->json(['success' => true]);
     }
     
 }

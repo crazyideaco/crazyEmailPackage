@@ -23,11 +23,12 @@ class SendMailApiController extends Controller
      * @return JsonResponse the JSON response indicating the success of the operation
      */
 
-    public function __invoke(Request $request, string $view_path = "emails_templates.mail_notify")
+    public function __invoke(Request $request)
     {
+        $view_path = config('SendMailConfig.view_path');
         $send_mail_service = new SendMailService();
         $mailData = $request->only(['sender_email', 'receiver_email', 'subject', 'body', 'logo']);
-        $mailData['project_name'] = Config::get('app.name');
+        $mailData['project_name'] = $request->project_name ?? Config::get('app.name');
         $send_mail_service->send_mail($mailData,$view_path);
         return new JsonResponse(['success' => true]);
     }
